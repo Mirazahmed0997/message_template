@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বার্ষিক চাঁদা পরিশোধের বার্তা - বাংলাদেশ জাতীয় সমবায় ইউনিয়ন</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0b2545;
+            --secondary-color: #134074;
+            --accent-color: #d97706;
+            --bg-body: #EEF4F8;
+            --card-bg: #ffffff;
+            --text-main: #1D2D44;
+            --border-color: #CBD5E1;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 0;
+            background: var(--bg-body);
+            font-family: 'Tiro Bangla', "SolaimanLipi", serif;
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .letter-container {
+            position: relative;
+            max-width: 850px;
+            margin: auto;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
+            color: #ffffff;
+            padding: 35px 45px 25px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .company-name {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .company-info {
+            font-size: 14.5px;
+            line-height: 1.6;
+            opacity: 0.92;
+        }
+
+        /* Official Document Meta */
+        .doc-meta {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 45px;
+            background: #F8FAFC;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 15px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* Main Body Wrapper */
+        .main-body-wrapper {
+            padding: 40px 45px;
+        }
+
+        /* Notice Box */
+        .official-notice-card {
+            background-color: #FFFBEB;
+            border: 1px solid #FDE68A;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 6px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+
+        .notice-title {
+            color: #92400E;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .notice-subtitle {
+            color: #451A03;
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Receipt Showcase Section */
+        .receipt-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .receipt-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .receipt-card {
+            display: inline-block;
+            max-width: 480px;
+            width: 100%;
+            height: 300px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .receipt-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* Signature Area */
+        .signature-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .signature-box {
+            width: 250px;
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 1.5px solid #000;
+            margin-bottom: 8px;
+        }
+
+        .signature-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1E293B;
+            font-weight: 600;
+        }
+
+        /* Official Footer */
+        .footer {
+            background: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 16px;
+            font-size: 14.5px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .letter-container {
+                box-shadow: none;
+                border: none;
+                max-width: 100%;
+            }
+
+            .header {
+                background: #0b2545 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px 0;
+            }
+
+            .header, .main-body-wrapper, .doc-meta {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .company-name {
+                font-size: 24px;
+            }
+
+            .doc-meta {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .signature-section {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="letter-container">
+
+        <!-- Header Section -->
+        <div class="header">
+            <div class="company-name">বাংলাদেশ জাতীয় সমবায় ইউনিয়ন</div>
+            <div class="company-info">
+                নিবন্ধন নম্বর: ৩৪, তারিখ: ১৬ জুন ১৯৬১ খ্রি: <br>
+                ঠিকানা: সমবায় ব্যাংক ভবন (৮ম তলা), ৯/ডি, মতিঝিল বা/এ, ঢাকা-১০০০।
+            </div>
+        </div>
+
+     
+
+        <!-- Main Content Area -->
+        <div class="main-body-wrapper">
+
+            <!-- Official Announcement Box -->
+            <div class="official-notice-card text-center">
+                <div class="notice-title">সদস্যদের বার্ষিক চাঁদা পরিশোধের স্বীকৃতি ও ধন্যবাদ বার্তা</div>
+                <p class="notice-subtitle">
+                    বাংলাদেশ জাতীয় সমবায় ইউনিয়নের সম্মানিত সদস্য হিসেবে আপনার ২০২৬ সালের বার্ষিক চাঁদা সফলভাবে জমা নিশ্চিত করা হয়েছে। ইউনিয়ন পরিচালনায় আপনার সার্বিক সহযোগিতা ও সক্রিয় অংশগ্রহণের জন্য আন্তরিক ধন্যবাদ।
+                </p>
+            </div>
+
+            <!-- Receipt Display Container -->
+            <div class="receipt-section">
+                <div class="receipt-title">
+                    <span>সংযুক্ত নথি:</span> চাঁদা জমা রশিদ 
+                </div>
+                <div class="receipt-card">
+                    
+                </div>
+            </div>
+
+            <!-- Signature Section -->
+            <div class="signature-section">
+                <div class="signature-box">
+                    <!-- <div class="signature-line"></div> -->
+                    <div class="signature-text">
+                        ধন্যবাদান্তে,<br>
+                        <strong>ব্যবস্থাপনা কমিটি</strong><br>
+                        বাংলাদেশ জাতীয় সমবায় ইউনিয়ন
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Info -->
+        <div class="footer">
+            ইমেইল: bjsu61@gmail.com &nbsp;|&nbsp; হটলাইন: ০১৭০৯-৬৫৩৫৯৯ &nbsp;|&nbsp; ওয়েবসাইট: bjsucoop.org
+        </div>
+
+    </div>
+
+</body>
+
+</html>

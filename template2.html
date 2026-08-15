@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নিয়োগ পত্র</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            
+            margin: 0;
+            /* padding: 15px 0; */
+            background: #eef2f7;
+            font-family: "SolaimanLipi", sans-serif;
+            color: #222;
+        }
+
+
+        .letter-container {
+            position: relative;
+            width: 210mm;
+            min-height: 297mm;
+
+            margin: auto;
+            background: #fff;
+
+            /* border-radius: 14px; */
+            overflow: hidden;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+            zoom: 0.82;
+        }
+
+        .letter-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            /* background-image: url('https://i.ibb.co.com/BKLZ5ZLG/central.jpg'); */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 700px;
+
+            opacity: 0.1;
+
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .letter-container>* {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .header {
+            background: #009F93;
+            /* background: linear-gradient(135deg, #0d3b66, #145da0); */
+            color: #fff;
+            padding: 18px 28px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            background: #fff;
+        }
+
+        .company-details {
+            flex: 1;
+            text-align: center;
+        }
+
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .company-info {
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+
+        .letter-meta {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 10px 28px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            /* background: #e3e8ef; */
+            /* background: #FEF200; */
+            border-bottom: 1px solid #e3e8ef;
+        }
+
+
+        .title {
+            text-align: center;
+
+            font-size: 22px;
+            font-weight: 700;
+
+            color: #0d3b66;
+
+            margin: 14px 0;
+
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+
+        .applicant-wrapper {
+            padding: 0 28px 14px;
+        }
+
+        .applicant-card {
+            border: 1px solid #dfe5ec;
+            border-radius: 10px;
+
+            padding: 16px;
+
+            background: rgba(255, 255, 255, 0.7);
+
+            backdrop-filter: blur(2px);
+        }
+
+        .applicant-details {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .applicant-info {
+            flex: 1;
+        }
+
+        .applicant-info p {
+            display: flex;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+            /* line-height: 1.5; */
+
+            border-bottom: 1px dashed #d8dee6;
+
+            /* padding-bottom: 5px; */
+        }
+
+        .label {
+            min-width: 135px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .value {
+            flex: 1;
+            color: #333;
+            text-align: justify;
+        }
+
+        .applicant-img {
+            width: 160px;
+            text-align: center;
+        }
+
+        .applicant-img img {
+            width: 140px;
+            height: 160px;
+
+            object-fit: cover;
+
+            border: 3px solid #d7dce2;
+            border-radius: 8px;
+
+            padding: 4px;
+            background: #fff;
+        }
+
+
+        .content {
+            padding: 0 28px 20px;
+
+            font-size: 13px;
+            line-height: 1.80;
+
+            text-align: justify;
+        }
+
+        .content p {
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background: #8ea2bd;
+
+            border-left: 5px solid #145da0;
+
+            padding: 10px 14px;
+
+            margin: 14px 0 12px;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+
+        .terms-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .terms-list li {
+            position: relative;
+            padding-left: 40px;
+            text-align: justify;
+            font-size: 13px;
+        }
+
+        .terms-list li strong {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            color: #0d3b66;
+        }
+
+
+        .signature-section {
+            /* margin-top: 45px; */
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 40px;
+        }
+
+        .signature-box {
+            width: 240px;
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 1px solid #000;
+
+            padding-top: 8px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            line-height: 1.7;
+        }
+
+
+        .footer {
+            background: #8114C4;
+
+            color: #fff;
+
+            text-align: center;
+
+            padding: 8px;
+
+            font-size: 14px;
+
+            letter-spacing: 0.5px;
+        }
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            .print-btn {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="content-wrapper">
+
+    <div class="letter-container">
+
+
+
+        <div class="header">
+
+            <div class="header-top">
+
+                <div class="logo">
+                    <img src="https://i.ibb.co.com/BKLZ5ZLG/central.jpg" alt="Logo">
+                </div>
+
+                <div class="company-details">
+
+                    <div class="company-name">
+                        শিক্ষিত বেকার কেন্দ্রীয় সঞ্চয় ও ঋণদান সমবায় সমিতি লিঃ
+                    </div>
+
+                    <div class="company-info">
+                        নিবন্ধন নম্বর: ১১২(চট্র), তাং ২৭.০১.২০১৫, ওয়ারলেছ বাজার, চাঁদপুর সদর, চাঁদপুর।<br>
+                        ই-মেইল: sbcl.coopsocietyltd@gmail.com |
+                        মোবাইল: ০১৭০৯৬৫৩৪০০
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+            <div class="letter-meta">
+
+
+                <div>
+                    স্মারক নং: স.ব্য.ক.কা (সার্ভিস)২৫১(২)/২৫-২৬/০৩.০৫.২০২৬
+                </div>
+
+                <div>
+                    তারিখ: ০৩.০৫.২০২৬
+                </div>
+
+
+            </div>
+            <div class="text-end mb-3">
+                <button class="print-btn btn btn-primary m-2" onclick="window.print()">
+                    Print
+                </button>
+            </div>
+        </div>
+
+        <div class="title">
+            নিয়োগ পত্র
+        </div>
+
+        <div class="applicant-wrapper">
+
+            <div class="applicant-card">
+
+                <div class="applicant-details">
+
+                    <div class="applicant-info">
+
+                        <p>
+                            <span class="label">নাম</span>
+                            <span class="value">: মিরাজ আহমেদ</span>
+                        </p>
+
+                        <p>
+                            <span class="label">পিতা</span>
+                            <span class="value">: মো. মোহসীন তালুকদার</span>
+                        </p>
+
+                        <p>
+                            <span class="label">মাতা</span>
+                            <span class="value">: নাসরিন সুলতানা</span>
+                        </p>
+
+                        <p>
+                            <span class="label">স্থায়ী ঠিকানা</span>
+                            <span class="value">
+                                : বাসা/হোল্ডিং: তালুকদার বাড়ি,
+                                গ্রাম/রাস্তা: শোভান,
+                                ফরিদগঞ্জ, চাঁদপুর
+                            </span>
+                        </p>
+
+                        <p>
+                            <span class="label">বর্তমান ঠিকানা</span>
+                            <span class="value">
+                                : বাসা/হোল্ডিং: ৮২,
+                                গ্রাম/রাস্তা: গেন্ডারিয়া (রজব আলী সরদার রোড),
+                                কদমতলী, ঢাকা
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <div class="applicant-img">
+
+                        <img src="https://sbcl24.com/cca/assets/uploads/employee/1778047178_employee_image.jpg" alt="">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="content">
+
+            <p>
+                শিক্ষিত বেকার কেন্দ্রীয় সঞ্চয় ও ঋণদান সমবায় সমিতি লিঃ এর
+                <strong>"ব্যবস্থাপক (আইটি)"</strong> পদে মাসিক মূল বেতন
+                <strong>১৩,০০০/- টাকা</strong> এবং যথাক্রমে মূল বেতনের ৫০% বাড়ি ভাড়া,
+                ১০% চিকিৎসা ভাতা, ২০% টিফিন ও লাঞ্চ ভাতা,
+                ২০% পরিবহন ও যাতায়াত ভাতাসহ সাকুল্য মাসিক
+                <strong>২৬,০০০/- টাকা</strong> বেতনে আপনাকে
+                <strong>০১.০৬.২০২৬</strong> তারিখ হতে নিম্নের শর্তসাপেক্ষে নিয়োগ প্রদান করা হলো।
+
+
+            </p>
+
+            <div class="info-box">
+                নিয়োগ শর্তাবলী :
+            </div>
+
+            <ul class="terms-list">
+
+                <li>
+                    <strong>০১.</strong>
+                    ০১.০৬.২০২৬ তারিখে সকাল ৯.০০ ঘটিকার মধ্যে নিয়োগকৃত পদের যোগদান পত্র সাপেক্ষে সমিতির সফটওয়্যারে
+                    অটোমেশন পদ্ধতিতে আপনার সকল তথ্য, চাকরির বৃত্তান্ত স্বয়ংক্রিয় পেপারলেস পদ্ধতিতে সংরক্ষণ করা হবে;
+                </li>
+
+                <li>
+                    <strong>০২.</strong>
+                    এই নিয়োগটি স্থায়ী নিয়োগের আওতায় হলেও পদের যোগদানের তারিখ হতে ০১ (এক) বছর শিক্ষানবিশকালীন
+                    (প্রশিক্ষণকাল) শতকরা ১০০ নম্বর এর মধ্যে ৭০ নম্বর প্রাপ্ত হতে হবে;
+                </li>
+
+                <li>
+                    <strong>০৩.</strong>
+                    পদের দৈনিক ০৮ ঘন্টা দায়িত্ব পালন করতে হবে। অফিস সময় সূচী সকাল ৯.০০ ঘটিকা হতে বিকাল ৫.০০ ঘটিকা
+                    পর্যন্ত নির্ধারিত হলেও সমিতি কর্তৃপক্ষ ০৮ ঘন্টা দায়িত্ব পালন যেকোন সময় সূচী পরিবর্তন পূর্বক নির্ধারণ
+                    করা হলে পরিবর্তিত সময়সূচী অনুযায়ী অফিস কার্যক্রমে উপস্থিত থাকতে হবে। দৈনিক ০৮ ঘন্টা দায়িত্ব পালন
+                    সময়ে সার্বক্ষণিক অফিস কাজে নিয়োজিত থাকতে হবে এবং পদের দায়িত্ব পালনকালীন ব্যক্তিগত মোবাইল ফোন অফিসে
+                    ব্যবহার করা যাবে না;
+                </li>
+
+                <li>
+                    <strong>০৪.</strong>
+                    দৈনিক উপস্থিতি ও প্রস্থান এর ক্ষেত্রে নির্ধারিত সময়ে উপস্থিত ও প্রস্থান করতে হবে। স্টাফ আইডি,
+                    পাসওয়ার্ড ও অন্যান্য প্রাতিষ্ঠানিক তথ্য কারো সাথে শেয়ার করা যাবেনা;
+                </li>
+
+                <li>
+                    <strong>০৫.</strong>
+                    নিয়োগপত্রে উল্লেখিত তারিখের মধ্যে কাজে যোগদান করতে হবে। অন্যথায় এ নিয়োগ স্বয়ংক্রিয়ভাবে বাতিল হবে;
+                </li>
+
+                <li>
+                    <strong>০৬.</strong>
+
+                    সকল প্রকার ছুটি সার্ভিস রুল অনুযায়ী পূর্ব অনুমোদন সাপেক্ষে ভোগ করতে হবে;
+                </li>
+
+                <li>
+                    <strong>০৭.</strong>
+                    নির্ধারিত সময় উপস্থিত, প্রস্থান, অফিসে দায়িত্বকালীন সময়ে অফিস ত্যাগ ও আগমন মুভমেন্ট করে অফিস ত্যাগ
+                    করতে হবে;
+                </li>
+
+                <li>
+                    <strong>০৮.</strong>
+                    একনাগাড়ে ০৫ দিন অনুমতি বা অনুমোদন ছাড়া অফিসে অনুপস্থিত থাকলে স্বয়ংক্রিয়ভাবে নিয়োগ বাতিল হবে এবং ০১
+                    মাসের সমপরিমান বেতন ক্ষতিপূরণ হিসাবে পরিশোধ করতে হবে;
+                </li>
+
+                <li>
+                    <strong>০৯.</strong>
+                    পদের দায়িত্ব পালনকালীন সময়ে কর্তৃপক্ষের অনুমোদন বা অনুমতি ব্যতিত প্রতিষ্ঠানের কোন সদস্য বা বিনিয়োগ
+                    প্রহীতা বা ক্লায়েন্ট হতে অর্থ লেনদেন বা গণনা বা কোন অর্থ স্পর্শ করতে পারবেন না, দায়িত্ব পালনের
+                    বিপরীতে প্রাতিষ্ঠানিক কোন সেবার বিনিময় খাদ্য দ্রব্য, অর্থ গ্রহন বা ধার বা বাকীতে কেনা-কাটা করা
+                    যাবেনা এবং সমিতির জারিকৃত বা নির্দেশিত আদেশ, সার্কুলার, সকল প্রকার নীতিমালা, সার্ভিস রুল, সমিতির
+                    উপ-আইন, সমবায় সমিতি আইন ও বিধিমালা পালন এবং সমিতির সাথে কোনো আর্থিক অনিয়ম, অর্থ আত্মসাৎ, তছরুপ,
+                    মিথ্যা তথ্য প্রদান, সত্য গোপন, প্রতারণা ও সমিতির স্বার্থ হানিকর কাজ না করার লিখিত অঙ্গীকার করতে হবে;
+                </li>
+
+                <li>
+                    <strong>১০.</strong>
+                    চাকরিতে যোগদানের পর মাসিক মূল বেতন হতে ১০% হারে ভবিষ্য তহবিল খাতে টাকা জমা করা এবং জমা টাকার উপর
+                    সমিতির সার্ভিস রুল অনুযায়ী বার্ষিক মুনাফা ও অন্যান্য সুবিধা প্রদান করা হবে;
+                </li>
+
+                <li>
+                    <strong>১১.</strong>
+                    কর্মকর্তা কর্মচারীর কল্যাণ তহবিল এর সদস্য হওয়ার আগ্রহ থাকলে সদস্য হয়ে মাসিক ১০০/-টাকা (অফেরতযোগ্য)
+                    চাঁদা জমা করা যাবে। কল্যাণ তহবিল এর নীতিমালা অনুযায়ী আপনার আপদকালীন এ তহবিল হতে আর্থিক সুবিধা
+                    প্রাপ্য হবেন।
+                </li>
+
+            </ul>
+
+            <div class="signature-section pt-5">
+
+                <div class="signature-box">
+
+                    <div class="">
+                    </div>
+
+                </div>
+
+                <div class="signature-box">
+
+                    <div class="signature-line">
+                        (মো. জসিম উদ্দিন শেখ) <br>
+                        ব্যবস্থাপনা পরিচালক<br>
+                        ০১৬১৫৬০৮৪৬৭
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>নিয়োগ পত্রটি সয়ংক্রিয়ভাবে প্রস্তুত। যেকোনো প্রয়োজনে যোগাযোগ করুন। <br>
+
+                sbcl.cooperativesocietyltd@gmail.com |
+
+                ০১৭০৯৬৫৩৪২৩</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
