@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>সমবায় ইউনিয়ন - জমা স্বীকৃতি মেইল</title>
+<style>
+  body{
+    margin:0;
+    padding:20px 8px;
+    background:#f3f5f7;
+    font-family:"Noto Sans Bengali","SolaimanLipi","Siyam Rupali",Arial,sans-serif;
+    color:#333;
+  }
+  .email-wrap{
+    max-width:610px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid #d7dce1;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+  }
+  .header{
+    background:#10345d;
+    color:#fff;
+    text-align:center;
+    padding:25px 18px 20px;
+    border-bottom:3px solid #f28c00;
+  }
+  .header h1{
+    margin:0 0 8px;
+    font-size:22px;
+    font-weight:700;
+  }
+  .header .line{
+    font-size:12px;
+    line-height:1.8;
+    opacity:.95;
+  }
+  .content{
+    padding:28px 32px 20px;
+  }
+  .notice{
+    border:1px solid #f0d98e;
+    border-left:4px solid #e88700;
+    background:#fffaf0;
+    border-radius:4px;
+    padding:17px 18px;
+    text-align:center;
+  }
+  .notice h2{
+    color:#9b4e12;
+    font-size:17px;
+    margin:0 0 12px;
+  }
+  .notice p{
+    margin:0;
+    font-size:13px;
+    line-height:1.9;
+  }
+  .receipt-title{
+    text-align:center;
+    font-size:14px;
+    font-weight:700;
+    color:#183b61;
+    margin:22px 0 12px;
+  }
+  .info-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+    font-size:13px;
+  }
+  .info-table td{
+    border:1px solid #e1e5e9;
+    padding:9px 10px;
+  }
+  .info-table .label{
+    width:34%;
+    background:#f6f8fa;
+    font-weight:700;
+    color:#34495e;
+  }
+  .amount{
+    color:#b85d00;
+    font-weight:700;
+  }
+  .attachment{
+    margin:18px 0 5px;
+    padding:11px 13px;
+    border:1px solid #d9e1e8;
+    border-radius:5px;
+    background:#f8fafc;
+    font-size:12px;
+    text-align:center;
+  }
+  .signature{
+    text-align:right;
+    margin:32px 0 10px;
+    font-size:13px;
+    line-height:1.8;
+    font-weight:600;
+  }
+  .footer{
+    background:#10345d;
+    color:#fff;
+    text-align:center;
+    padding:12px 10px;
+    font-size:11px;
+    line-height:1.8;
+  }
+  .footer span{
+    display:inline-block;
+    margin:0 5px;
+  }
+  @media(max-width:520px){
+    .content{padding:20px 16px;}
+    .header h1{font-size:19px;}
+    .notice h2{font-size:15px;}
+    .info-table{font-size:12px;}
+  }
+</style>
+</head>
+
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>বাংলাদেশ জাতীয় সমবায় ইউনিয়ন</h1>
+    <div class="line">
+      নিবন্ধন নম্বর: ৪৪, তারিখ: ২৬ জুন ১৯৫৮ খ্রি.<br>
+      ঠিকানা: সমবায় ভবন, আগারগাঁও, ঢাকা-১২০৭
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    <div class="notice">
+      <h2>{{KHAT_NAME}} জমা প্রদানের স্বীকৃতি ও ধন্যবাদ বার্তা</h2>
+
+      <p>
+        সম্মানিত <strong>{{MEMBER_NAME}}</strong>,<br>
+        বাংলাদেশ জাতীয় সমবায় ইউনিয়নের সদস্য হিসেবে আপনার
+        <strong>{{KHAT_NAME}}</strong> বাবদ
+        <strong>{{AMOUNT}} টাকা</strong> জমা সফলভাবে গ্রহণ ও
+        হিসাবভুক্ত করা হয়েছে।<br>
+        আপনার নিয়মিত সহযোগিতা ও সক্রিয় অংশগ্রহণের জন্য আন্তরিক ধন্যবাদ।
+      </p>
+    </div>
+
+    <div class="receipt-title">জমার তথ্য</div>
+
+    <table class="info-table" cellpadding="0" cellspacing="0">
+      <tr>
+        <td class="label">সদস্যের নাম</td>
+        <td>{{MEMBER_NAME}}</td>
+      </tr>
+      <tr>
+        <td class="label">সদস্য নম্বর</td>
+        <td>{{MEMBER_ID}}</td>
+      </tr>
+      <tr>
+        <td class="label">জমার খাত</td>
+        <td><strong>{{KHAT_NAME}}</strong></td>
+      </tr>
+      <tr>
+        <td class="label">জমার পরিমাণ</td>
+        <td class="amount">{{AMOUNT}} টাকা</td>
+      </tr>
+      <tr>
+        <td class="label">জমার তারিখ</td>
+        <td>{{PAYMENT_DATE}}</td>
+      </tr>
+      <tr>
+        <td class="label">ভাউচার নম্বর</td>
+        <td>{{VOUCHER_NO}}</td>
+      </tr>
+      <tr>
+        <td class="label">জমার মাধ্যম</td>
+        <td>{{PAYMENT_METHOD}}</td>
+      </tr>
+    </table>
+
+    <div class="attachment">
+      <strong>সংযুক্তি:</strong> {{VOUCHER_FILE_NAME}}<br>
+      জমার ভাউচার/রসিদ এই মেইলের সাথে সংযুক্ত করা হয়েছে।
+    </div>
+
+    <div class="signature">
+      ধন্যবাদান্তে,<br>
+      <strong>ব্যবস্থাপনা কমিটি</strong><br>
+      বাংলাদেশ জাতীয় সমবায় ইউনিয়ন
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>ই-মেইল: bjsu01@gmail.com</span>
+    <span>|</span>
+    <span>হটলাইন: ০৯৬১৩-৬০৬০৬০</span>
+    <span>|</span>
+    <span>ওয়েবসাইট: bjsucoop.org</span>
+  </div>
+
+</div>
+</body>
+</html>
